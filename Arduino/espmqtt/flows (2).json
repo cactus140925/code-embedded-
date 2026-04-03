@@ -1,0 +1,51 @@
+[
+    {
+        "id": "f1a2b7e0b6a5d6d2",
+        "type": "mqtt in",
+        "z": "733c7b3074988001",
+        "name": "ESP32 State",
+        "topic": "esp32/relay/state",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "1b2c3d4e.5f6a7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "0f5b4e8b3c4d9a1f"
+            ]
+        ]
+    },
+    {
+        "id": "1b2c3d4e.5f6a7",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Local",
+        "broker": "10.50.237.106",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

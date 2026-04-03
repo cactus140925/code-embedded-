@@ -1,0 +1,13 @@
+function doGet(e) { 
+  // Nhận dữ liệu từ ESP gửi lên
+  var temp = e.parameter.temp;
+  var fire = e.parameter.fire; // Đây là giá trị nồng độ khói
+  var led = e.parameter.led;   // MỚI: Trạng thái cảnh báo (0 hoặc 1)
+  
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  
+  // Ghi thêm dòng mới: [Thời gian, Nhiệt độ, Khói, Trạng thái LED]
+  sheet.appendRow([new Date(), temp, fire, led]);
+  
+  return ContentService.createTextOutput("Da ghi du lieu");
+}

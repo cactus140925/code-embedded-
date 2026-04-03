@@ -1,0 +1,42 @@
+[
+    {
+        "id": "4bd36d8feca65269",
+        "type": "ui_template",
+        "z": "9c353c6925e372a7",
+        "group": "8c77a8e7.2e9f6",
+        "name": "",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    /* 1. Đổi màu nền toàn bộ trang web sang màu xám đen sang trọng */\n    body.nr-dashboard-theme {\n        background-color: #111827 !important;\n    }\n\n    /* 2. Biến các ô Group thành các thẻ bài (Card) bo tròn */\n    .nr-dashboard-cardpanel {\n        background-color: #1f2937 !important; /* Màu nền của ô */\n        border-radius: 20px !important;       /* Bo tròn góc 20px */\n        border: 1px solid #374151 !important; /* Viền mỏng */\n        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important; /* Đổ bóng */\n    }\n\n    /* 3. Chỉnh lại tiêu đề của Group cho đẹp */\n    .nr-dashboard-cardtitle {\n        color: #60a5fa !important; /* Màu chữ xanh dương nhạt */\n        font-size: 18px !important;\n        font-weight: bold !important;\n        text-transform: uppercase; /* Viết hoa toàn bộ */\n    }\n\n    /* 4. Tùy chỉnh biểu đồ Chart */\n    .nr-dashboard-chart {\n        padding: 10px !important;\n    }\n\n    /* 5. Tùy chỉnh chữ Text (Trạng thái) */\n    .nr-dashboard-text span {\n        font-size: 16px !important;\n        font-weight: 500;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 240,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c77a8e7.2e9f6",
+        "type": "ui_group",
+        "name": "ESP32 Dashboard",
+        "tab": "2a4b6c3d.8f7d9",
+        "order": 1,
+        "disp": true,
+        "width": 15,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2a4b6c3d.8f7d9",
+        "type": "ui_tab",
+        "name": "ESP32 Control",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

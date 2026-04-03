@@ -1,0 +1,43 @@
+[
+    {
+        "id": "63abe2e761a7ec76",
+        "type": "telegram sender",
+        "z": "9c353c6925e372a7",
+        "name": "",
+        "bot": "24c1bef2f53623f3",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1290,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "24c1bef2f53623f3",
+        "type": "telegram bot",
+        "botname": "Controlcactus",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": "2000",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]

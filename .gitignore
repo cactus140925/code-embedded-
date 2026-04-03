@@ -1,0 +1,28 @@
+# Các file rác của Keil C
+Objects/
+Listings/
+*.uvgui.*
+*.uvoptx
+*.uv2
+*.lnp
+*.axf
+*.htm
+*.build_log.htm
+*.dep
+
+# Các file rác của STM32/VS Code
+Debug/
+Release/
+.vscode/
+*.o
+*.d
+*.crf
+*.elf
+*.map
+*.hex
+*.bin
+
+# Các file rác của Altium (nếu có)
+History/
+__Preview/
+Project\ Logs*/

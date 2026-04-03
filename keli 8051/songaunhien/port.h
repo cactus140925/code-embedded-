@@ -1,0 +1,11 @@
+char code7[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+sbit C1= P1^0;
+sbit C2= P1^1;
+sbit C3= P1^2;
+sbit C4= P1^3;
+sbit R1 = P1^4;
+sbit R2 = P1^5;
+sbit R3 = P1^6;
+sbit R4 = P1^7;
+sbit led1 = P3^0;
+sbit led2= P3^1;
