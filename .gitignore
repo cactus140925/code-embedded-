@@ -21,7 +21,17 @@ Release/
 *.map
 *.hex
 *.bin
+# Loại bỏ thư viện Arduino cồng kềnh
+Arduino/libraries/
 
+# Loại bỏ rác Keil C
+*.o
+*.d
+*.crf
+*.lnp
+*.axf
+Objects/
+Listings/
 # Các file rác của Altium (nếu có)
 History/
 __Preview/
