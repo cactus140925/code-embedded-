@@ -8,8 +8,6 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define S1 7  
 #define S2 6  
 
-// ĐIỂM QUAN TRỌNG: Mảng ánh xạ thứ tự vật lý (Trái -> Phải) sang chân Mux
-// Vị trí vật lý:  0   1   2   3   4   5   6   7
 const int muxMap[8] = {2,  1,  0,  3,  5,  7,  6,  4};
 
 int sensorValues[8];
@@ -40,9 +38,8 @@ void setup() {
   // --- QUÁ TRÌNH CALIB ---
   while (millis() - startTime < 5000) {
     for (int i = 0; i < 8; i++) {
-      int channel = muxMap[i]; // Lấy số kênh thực tế từ mảng ánh xạ
+      int channel = muxMap[i]; 
       
-      // Bật chân Mux theo số kênh thực tế
       digitalWrite(S0, bitRead(channel, 0));
       digitalWrite(S1, bitRead(channel, 1));
       digitalWrite(S2, bitRead(channel, 2));
@@ -50,7 +47,6 @@ void setup() {
       
       int val = analogRead(X_PIN);
       
-      // Lưu Min/Max theo thứ tự vật lý (i)
       if (val < minValues[i]) minValues[i] = val;
       if (val > maxValues[i]) maxValues[i] = val;
     }
@@ -72,15 +68,13 @@ void loop() {
 
   // --- QUÁ TRÌNH ĐỌC CẢM BIẾN ---
   for (int i = 0; i < 8; i++) {
-    int channel = muxMap[i]; // Lấy số kênh thực tế từ mảng ánh xạ
+    int channel = muxMap[i]; 
     
-    // Bật chân Mux theo số kênh thực tế
     digitalWrite(S0, bitRead(channel, 0));
     digitalWrite(S1, bitRead(channel, 1));
     digitalWrite(S2, bitRead(channel, 2));
     delayMicroseconds(50); 
     
-    // Lưu giá trị đọc được vào đúng thứ tự vật lý (i)
     sensorValues[i] = analogRead(X_PIN);
     
     if (sensorValues[i] > thresholds[i]) {
@@ -93,23 +87,25 @@ void loop() {
   lcd.setCursor(0, 0);
   lcd.print("Line: [");
   for (int i = 0; i < 8; i++) {
-    // Vòng lặp in từ 0 đến 7 giờ đã khớp hoàn toàn với vật lý từ Trái qua Phải
     if (sensorValues[i] > thresholds[i]) lcd.print("X"); 
     else lcd.print("_");                             
   }
   lcd.print("]");
 
+  // --- XỬ LÝ LOGIC HƯỚNG ĐI ---
   lcd.setCursor(0, 1);
+  
   if (activeSensors == 0) {
     lcd.print(">> MAT LINE <<  "); 
   } 
+  else if (activeSensors >= 6) {
+    lcd.print("Huong: NGA BA   "); 
+  }
   else {
     float position = weightedSum / activeSensors;
-    // Mắt trái (0,1,2) đè line -> position nhỏ -> rẽ trái
     if (position < 3.0) {
       lcd.print("Huong: TRAI     "); 
     } 
-    // Mắt phải (5,6,7) đè line -> position lớn -> rẽ phải
     else if (position > 4.0) {
       lcd.print("Huong: PHAI     "); 
     } 
@@ -117,5 +113,6 @@ void loop() {
       lcd.print("Huong: THANG    "); 
     }
   }
+  
   delay(100); 
 }
